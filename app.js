@@ -76,6 +76,8 @@ app.get("/contacts", function(req, res) {
   res.render("contactlist", {contacts: db});
 });
 
+// This is a new change
+
 app.get("/contacts/:guid", function(req, res) {
   var guid = req.param("guid"),
       record = _.findWhere(db, {guid: guid});
