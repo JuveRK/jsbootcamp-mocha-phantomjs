@@ -18,6 +18,8 @@
   },
   "devDependencies": {
     "grunt": "0.4.1",
-    "grunt-contrib-jshint": "0.7.0"
+    "grunt-contrib-jshint": "0.7.0",
+    "grunt-bower-install-task": "0.0.2",
+    "bower": "~1.2.7"
   }
 }
