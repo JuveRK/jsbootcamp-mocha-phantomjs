@@ -23,5 +23,8 @@
   "scripts": {
     "postinstall": "./node_modules/grunt-cli/bin/grunt",
     "start": "node app"
+  },
+  "devDependencies": {
+    "grunt-mocha-phantomjs": "~0.3.0"
   }
 }
