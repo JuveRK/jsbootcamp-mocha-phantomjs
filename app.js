@@ -76,6 +76,10 @@ app.get("/contacts", function(req, res) {
   res.render("contactlist", {contacts: db});
 });
 
+app.get("/raphael", function(req, res) {
+  res.render("raphael");
+});
+
 // This is a new change
 
 app.get("/contacts/:guid", function(req, res) {

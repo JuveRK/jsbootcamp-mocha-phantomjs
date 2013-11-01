@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files: [
-          {src: ["bower_components/**"], dest: "public/"}
+          {expand: true, cwd: "bower_components/", src: ["**"], dest: "public/"}
         ]
       }
     },
