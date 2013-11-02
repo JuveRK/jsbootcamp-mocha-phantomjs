@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files: [
-          {expand: true, cwd: "bower_components/", src: ["**/raphael-min.js", "**/bootstrap.min.js", "**/bootstrap.min.css", "**/bootstrap.min.js", "**/jquery.js"], dest: "public/"}
+          {expand: true, cwd: "bower_components/", src: ["**/raphael-min.js", "**/bootstrap.min.js", "**/bootstrap.min.css", "**/bootstrap-theme.min.css", "**/jquery.js"], dest: "public/"}
         ]
       }
     },
