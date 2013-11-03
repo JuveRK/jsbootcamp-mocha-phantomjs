@@ -17,10 +17,11 @@ $(document).ready(function(){
 
 	// stroke tool
 
-	var mousedown = false
-
+	var mousedown = false;
+	var strokeNumber = 0;
 	$('svg').mousedown(function(event){
 	var lastX, lastY, pathString, path;
+		strokeNumber++;
 	    mousedown = true;
 
 	    var x = event.pageX,
@@ -28,6 +29,7 @@ $(document).ready(function(){
 
 	    pathString = 'M' + x + ',' + y + 'l0,0';
     	path = paper.path(pathString).attr({"fill": "none", stroke: "#000", "stroke-width": 5});	
+    	$('path:not([id])').attr("id",strokeNumber);
 	    lastX = x;
 	    lastY = y;
 		$(document).mouseup(function(){
@@ -39,8 +41,9 @@ $(document).ready(function(){
 	    	}
 		    var x = event.pageX,
 		        y = event.pageY;
-	    	pathString += 'L' + x + ',' + y; 
-	    	$('path').attr({"d":pathString});
+	    	pathString += 'L' + x + ',' + y;
+	    	var idHelper = "#"+strokeNumber; 
+	    	$(idHelper).attr({"d":pathString});
 		});
 
 	});
