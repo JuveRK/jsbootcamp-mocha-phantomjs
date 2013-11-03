@@ -1,10 +1,21 @@
 // drawing.js      ryan juve
 // javascript and jquery to run simple drawing app using raphael    also bootstrap
 
+// todo:
+// color selector, stroke color/width selector
+//
+
 $(document).ready(function(){
+	// create raphael canvas
 	var paper = new Raphael(0, 0, window.innerWidth, window.innerHeight);
+	// make raphael canvas resize with window
 	$(window).resize(function(){
 		paper.setSize(window.innerWidth, window.innerHeight)
+	});
+	// set up global variables for colors
+	var strokeColor = $('#strokeColorPicker').val();
+	$('#strokeColorPicker').change(function(){
+		strokeColor = this.value;
 	});
 
 	// stamp tool
@@ -28,7 +39,7 @@ $(document).ready(function(){
 	        y = event.pageY;
 
 	    pathString = 'M' + x + ',' + y + 'l0,0';
-    	path = paper.path(pathString).attr({"fill": "none", stroke: "#000", "stroke-width": 5});	
+    	path = paper.path(pathString).attr({"fill": "none", stroke: strokeColor, "stroke-width": 5});	
     	$('path:not([id])').attr("id",strokeNumber);
 	    lastX = x;
 	    lastY = y;
