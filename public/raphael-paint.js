@@ -1,5 +1,5 @@
-// drawing.js      ryan juve
-// javascript and jquery to run simple drawing app using raphael    also bootstrap
+// raphael-paint.js      ryan juve
+// javascript and jquery to run simple drawing app using raphaeljs   also bootstrap
 
 // todo:
 // tool selector, fill color selector, stroke color/width selector
