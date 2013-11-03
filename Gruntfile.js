@@ -38,7 +38,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-clean");
   grunt.loadNpmTasks("grunt-mocha-phantomjs");
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('connect-livereload');
 
   grunt.registerTask("default", ["bower_install", "copy"]);
   grunt.registerTask("test", ["mocha_phantomjs"]);
