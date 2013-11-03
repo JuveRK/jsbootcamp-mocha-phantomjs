@@ -1,12 +1,6 @@
-body {
-  padding: 1em 1.5em 1em 1.5em;
-}
-
 #canvas, #canvas:active, #canvas:focus {
 	cursor: crosshair;
 }
-
-
 
 #strokeColorPicker {
 	height: 60px;

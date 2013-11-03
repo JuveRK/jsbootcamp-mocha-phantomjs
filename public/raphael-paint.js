@@ -2,7 +2,7 @@
 // javascript and jquery to run simple drawing app using raphaeljs   also bootstrap
 
 // todo:
-// tool selector, fill color selector, stroke color/width selector
+// tool selector, fill color selector
 //
 
 $(document).ready(function(){
@@ -23,7 +23,7 @@ $(document).ready(function(){
 	$('#strokeWidthPicker').change(function(){
 		strokeWidth = this.value;
 	});
-	// make buttons clickable and fire their functions
+	// give buttons event watchers and fire their functions
 	$('.clear:button').click(function(){
 		paper.clear();
 	});
@@ -31,6 +31,7 @@ $(document).ready(function(){
 		$("#"+strokeNumber).remove();
 		strokeNumber--;
 	});
+	
 	// stamp tool
 	/*
 	$('svg').mousedown(function(event){
