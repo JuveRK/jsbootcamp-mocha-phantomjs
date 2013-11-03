@@ -1,10 +1,6 @@
-Code Fellows JS Bootcamp - Mocha/PhantomJS Answers
-==================================================
+raphaeljs-paint - a super simple svg painting app
+=================================================
 
-This is the first starter project that we'll be working with as part of
-the Fall 2013 JS Bootcamp.
+A Code Fellows homework and weekend coding project.
 
-This project contains the answers to the nightly assignment to add browser
-BDD tests written with mocha and run them in phantomjs.
-
-DO NOT LOOK UNTIL YOU'VE ATTEMPTED YOURSELF!
+Draw simple svg images using your mouse using raphaeljs and a jQuery interface.
