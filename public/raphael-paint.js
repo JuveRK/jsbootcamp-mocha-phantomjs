@@ -23,7 +23,14 @@ $(document).ready(function(){
 	$('#strokeWidthPicker').change(function(){
 		strokeWidth = this.value;
 	});
-
+	// make buttons clickable and fire their functions
+	$('.clear:button').click(function(){
+		paper.clear();
+	});
+	$('.undo:button').click(function(){
+		$("#"+strokeNumber).remove();
+		strokeNumber--;
+	});
 	// stamp tool
 	/*
 	$('svg').mousedown(function(event){
@@ -59,9 +66,8 @@ $(document).ready(function(){
 	    	}
 		    var x = event.pageX,
 		        y = event.pageY;
-	    	pathString += 'L' + x + ',' + y;
-	    	var idHelper = "#"+strokeNumber; 
-	    	$(idHelper).attr({"d":pathString});
+	    	pathString += 'L' + x + ',' + y; 
+	    	$("#"+strokeNumber).attr({"d":pathString});
 		});
 
 	});
