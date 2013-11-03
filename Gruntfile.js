@@ -1,7 +1,13 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     jshint: {
-      files: ["Gruntfile.js", "app.js", "public/*.js"]
+      files: ["Gruntfile.js", "app.js", "public/*.js"],
+      ignore_warning: {
+        options: {
+          '-W099': true,
+        },
+        src: ['**/*.js','*.js'],
+      }
     },
     copy: {
       main: {
