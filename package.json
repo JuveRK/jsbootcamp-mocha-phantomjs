@@ -25,6 +25,8 @@
     "start": "node app"
   },
   "devDependencies": {
-    "grunt-mocha-phantomjs": "~0.3.0"
+    "grunt-mocha-phantomjs": "~0.3.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "connect-livereload": "~0.3.0"
   }
 }

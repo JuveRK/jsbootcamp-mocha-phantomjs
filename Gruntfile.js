@@ -23,6 +23,12 @@ module.exports = function(grunt) {
         reporter: "xunit",
         output: "./mocha_result.xml"
       }
+    },
+    watch: {
+      files: ["views/*", "public/**"],
+      options: {
+        livereload: true
+      }
     }
   });
 
@@ -31,7 +37,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-copy");
   grunt.loadNpmTasks("grunt-contrib-clean");
   grunt.loadNpmTasks("grunt-mocha-phantomjs");
-
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('connect-livereload');
 
   grunt.registerTask("default", ["bower_install", "copy"]);
   grunt.registerTask("test", ["mocha_phantomjs"]);
