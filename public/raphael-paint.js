@@ -2,20 +2,26 @@
 // javascript and jquery to run simple drawing app using raphael    also bootstrap
 
 // todo:
-// color selector, stroke color/width selector
+// tool selector, fill color selector, stroke color/width selector
 //
 
 $(document).ready(function(){
 	// create raphael canvas
 	var paper = new Raphael(0, 0, window.innerWidth, window.innerHeight);
+	$('svg').attr("id","canvas")
 	// make raphael canvas resize with window
 	$(window).resize(function(){
 		paper.setSize(window.innerWidth, window.innerHeight)
 	});
-	// set up global variables for colors
+	// set up global variables for drawing attributes
 	var strokeColor = $('#strokeColorPicker').val();
+	var strokeWidth = $('#strokeWidthPicker').val();
+	// link drawing attributes to toolbar inputs
 	$('#strokeColorPicker').change(function(){
 		strokeColor = this.value;
+	});
+	$('#strokeWidthPicker').change(function(){
+		strokeWidth = this.value;
 	});
 
 	// stamp tool
@@ -32,6 +38,7 @@ $(document).ready(function(){
 	var strokeNumber = 0;
 	$('svg').mousedown(function(event){
 	var lastX, lastY, pathString, path;
+		event.preventDefault(); //cursor fix
 		strokeNumber++;
 	    mousedown = true;
 
@@ -39,7 +46,7 @@ $(document).ready(function(){
 	        y = event.pageY;
 
 	    pathString = 'M' + x + ',' + y + 'l0,0';
-    	path = paper.path(pathString).attr({"fill": "none", stroke: strokeColor, "stroke-width": 5});	
+    	path = paper.path(pathString).attr({"fill": "none", "stroke-linecap": "round", "stoke-linejoin": "round", stroke: strokeColor, "stroke-width": strokeWidth});	
     	$('path:not([id])').attr("id",strokeNumber);
 	    lastX = x;
 	    lastY = y;
