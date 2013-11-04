@@ -3,7 +3,7 @@
   <head>
     <!-- grunt-contrib-watch livereload -->
     <script src="http://localhost:35729/livereload.js"></script>
-    
+
     <title>raphael-paint</title>
 
     <!-- Bring In jQuery -->
@@ -25,18 +25,22 @@
   <body>
 
   <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-    Stroke Color: <br><input type="color" id="strokeColorPicker" value="#AAA">
-    Stroke Width: <input type="number" id="strokeWidthPicker" value="5" min="1" max="256">
-    <div class="btn-group">
+    <span style="float: left">Stroke Color: <br><input type="color" id="strokeColorPicker" value="#AAA"></span>
+    <span style="float: left">Fill Color: <br><input type="color" id="fillColorPicker" value="#AAA"></span>
+    <span style="float: left; margin: 30px 5px">Stroke Width: <input type="number" id="strokeWidthPicker" value="5" min="1" max="256"></span>
+    <div class="btn-group" style="float: left; margin: 30px 5px">
       <button type="button" class="btn btn-default clear">Clear All</button>
       <button type="button" class="btn btn-default undo">Undo</button>
     </div>
-
-    <div class="btn-group pull-right">
-      <button id="fadeMenu" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#formModal">
-        Aribitrary form with focus/blur
+    <form style="margin: 20px 5px">
+      <input type="radio" name="tool" value="pathTool">Path Tool<br>
+      <input type="radio" name="tool" value="shapeTool">Shape Tool<small style="opacity:0.5">beta</small>
+    <div style="position:relative; bottom: 15px; right: 15px" class="btn-group pull-right">
+      <button  id="fadeMenu" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#formModal">
+        Aribitrary form
       </button>
     </div> 
+    </form>
   </nav>  
   <!-- Modal -->
   <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

@@ -2,7 +2,15 @@
 	cursor: crosshair;
 }
 
-#strokeColorPicker {
+#strokeColorPicker, #fillColorPicker {
 	height: 60px;
 	width: 88px;
+	display: inline-block;
+	margin-right: 5px;
 }
+
+nav {
+	height: 90px;
+	padding: 5px;
+}
+
